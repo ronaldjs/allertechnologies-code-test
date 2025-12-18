@@ -10,7 +10,7 @@ export function ProductProvider({ children }) {
   const fetchProducts = async () => {
     setLoading(true);
 
-    // "http://localhost:3000/products"
+    // "http://localhost:3001/products"
     const res = await fetch('/products');
     const data = await res.json();
     setProducts(data);
@@ -18,7 +18,7 @@ export function ProductProvider({ children }) {
     setLoading(false);  
   }
 
-  // "http://localhost:3000/products"
+
   const addReview = async (productId, review) => {
     await fetch(`http://localhost:3001/products/${productId}/reviews`, {
       method: "POST",
